@@ -16,6 +16,7 @@ android.useDeprecatedNdk=true
 ```
 
 2 ÐÞ¸Ä `app\build.gradle`
+```xml
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -26,26 +27,25 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-```xml
+				// moduleName
         ndk {
             moduleName = "HelloJni"
         }
     }
-```
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-```xml
+    // source directory
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
-```
 }
+```
 
 
 3 mkdir app\src\main\jni
